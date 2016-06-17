@@ -8,10 +8,9 @@
  * Controller of the smartbarApp
  */
 angular.module('smartbarApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+  .controller('MainCtrl', function ($scope) {
+
+    $scope.floatMenu = { title: 'Test DRAG' };
+
   });
