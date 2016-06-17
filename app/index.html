@@ -8,36 +8,47 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app="smartbarApp">
+<body ng-app="smartbarApp" ng-cloak>
 
 <!-- Add your site or application content here -->
-<div class="main-container" ng-controller="MainCtrl">
+<div class="main-container" ng-controller="MainCtrl as ctrl">
 
   <!--<div ng-include="'views/main.html'"></div>-->
 
 
   <!--Top Menu-->
   <div class="top-menu">
-    <div><span style="font-weight: 700;">Allplan SartBar</span> [ Top Menu, docking area ]</div>
+    <div><span style="font-weight: 700;">Allplan SmartBar</span> [ Top Menu, docking area ]</div>
   </div>
 
   <!--Floating Menu-->
-  <div id="float-menu" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{animate:true}" ng-model="floatMenu">
-    {{floatMenu.title}}
-<!--
-      <ul class="fmenu">
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-      </ul>
--->
+  <div id="float-menu" data-drag="true" jqyoui-draggable="{animate:true}" ng-model="floatMenu">
+
+    <md-menu class="fmenu">
+      <md-button aria-label="Open phone interactions menu" class="float-menu-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+        Architektur
+      </md-button>
+
+      <md-menu-content width="4">
+
+        <md-menu-item ng-repeat="item in floatMenu">
+          <md-button ng-click="ctrl.alert(item)">
+            {{item.name}}
+          </md-button>
+        </md-menu-item>
+
+      </md-menu-content>
+
+    </md-menu>
+
   </div>
 
 
@@ -54,6 +65,10 @@
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/jquery-ui/jquery-ui.js"></script>
   <script src="bower_components/angular-dragdrop/src/angular-dragdrop.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

@@ -9,8 +9,31 @@
  */
 angular.module('smartbarApp')
 
-  .controller('MainCtrl', function ($scope) {
+       .controller('MainCtrl', function ($scope, $mdDialog) {
 
-    $scope.floatMenu = { title: 'Test DRAG' };
+         var originatorEv;
+         this.openMenu = function ($mdOpenMenu, ev) {
+           originatorEv = ev;
+           $mdOpenMenu(ev);
+         };
 
-  });
+         $scope.floatMenu = [
+           {
+             name: 'item #1'
+           },
+           {
+             name: 'item #2'
+           },
+           {
+             name: 'item #3'
+           },
+           {
+             name: 'item #4'
+           }
+         ];
+
+         this.alert = function (item) {
+           alert(item.name);
+         }
+
+       });

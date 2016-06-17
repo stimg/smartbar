@@ -1,3 +1,5 @@
+@import url(http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css);
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -49,22 +51,29 @@ body {
 
 #float-menu {
   position: absolute;
+  white-space: nowrap;
+  cursor: default;
   top: 100px;
   left: 150px;
   width: auto;
   line-height: 32px;
-  background-color: #9acfea;
-  border: 1px dashed grey;
+  background-color: white;
+  border: 1px solid silver;
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
 }
 
 .fmenu {
-  list-style: none;
-  padding: 0 10px 0 0;
-  margin: 0;
+  padding: 5px;
+  width: auto;
 }
 .fmenu > li {
   float: left;
   padding: 0 0 0 10px;
   margin: 0;
 }
+
+
+.menudemoBasicUsage .md-menu-demo {
+  padding: 24px; }
+.menudemoBasicUsage .menu-demo-container {
+  min-height: 200px; }

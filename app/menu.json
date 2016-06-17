@@ -1,0 +1,22 @@
+{
+  "name": "Main",
+  "items": [
+    {
+      "name": "sub 1",
+      "icon": ""
+    },
+    {
+      "name": "sub 2",
+      "icon": ""
+    },
+    {
+      "name": "sub 3",
+      "icon": ""
+    },
+    {
+      "name": "sub 4",
+      "icon": ""
+    }
+  ]
+
+}
