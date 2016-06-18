@@ -30,20 +30,41 @@
   </div>
 
   <!--Floating Menu-->
-  <div id="float-menu" data-drag="true" jqyoui-draggable="{animate:true}" ng-model="floatMenu">
+  <div id="float-menu" data-drag="true" jqyoui-draggable="{animate:true}">
 
     <md-menu class="fmenu">
-      <md-button aria-label="Open phone interactions menu" class="float-menu-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
-        <md-icon md-menu-origin md-svg-src="images/icons/SmartBar_Icons-01.svg"></md-icon>
-        Architektur
+
+      <md-button aria-label="Open interactions menu" class="float-menu-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+        <md-icon md-menu-origin md-svg-src="{{floatMenu[activeMenuIndex].icon}}"></md-icon>
+        {{floatMenu[activeMenuIndex].name}}
       </md-button>
 
       <md-menu-content width="4">
 
         <md-menu-item ng-repeat="item in floatMenu">
           <md-button ng-click="ctrl.alert(item)">
-            <md-icon md-svg-src="images/icons/SmartBar_Icons-02.svg" md-menu-align-target></md-icon>
+            <md-icon md-svg-src="{{item.icon}}" md-menu-align-target></md-icon>
             {{item.name}}
+          </md-button>
+        </md-menu-item>
+
+      </md-menu-content>
+
+    </md-menu>
+
+    <md-menu class="fmenu">
+
+      <md-button aria-label="Open interactions menu" class="float-menu-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)" ng-repeat="item in floatMenu[activeMenuIndex].items">
+        <md-icon md-menu-origin md-svg-src="{{item.icon}}"></md-icon>
+        {{item.name}}
+      </md-button>
+
+      <md-menu-content width="4">
+
+        <md-menu-item ng-repeat="citem in item.items">
+          <md-button ng-click="ctrl.alert(citem)">
+            <md-icon md-svg-src="{{citem.icon}}" md-menu-align-target></md-icon>
+            {{citem.name}}
           </md-button>
         </md-menu-item>
 

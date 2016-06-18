@@ -9,7 +9,9 @@
  */
 angular.module('smartbarApp')
 
-       .controller('MainCtrl', function ($scope, $mdDialog) {
+       .controller('MainCtrl', function ($scope, $http, $mdDialog) {
+
+         $scope.activeMenuIndex = 0;
 
          var originatorEv;
 
@@ -18,8 +20,8 @@ angular.module('smartbarApp')
            $mdOpenMenu(ev);
          };
 
-         $.getJSON('menu.json').then(function (menu) {
-           $scope.floatMenu = menu; 
+         $http.get('menu.json').then(function (menu) {
+           $scope.floatMenu = menu.data;
          });
 
          this.alert = function (item) {
