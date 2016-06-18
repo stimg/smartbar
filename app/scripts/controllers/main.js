@@ -12,6 +12,8 @@ angular.module('smartbarApp')
        .controller('MainCtrl', function ($scope, $http, $mdDialog) {
 
          $scope.activeMenuIndex = 0;
+         $scope.activeSubmenu = {};
+         $scope.compactMode = false;
 
          var originatorEv;
 
@@ -22,10 +24,29 @@ angular.module('smartbarApp')
 
          $http.get('menu.json').then(function (menu) {
            $scope.floatMenu = menu.data;
+           $scope.activeSubmenu = menu.data[0].items;
          });
 
-         this.alert = function (item) {
-           alert(item.name);
-         }
+         this.setActiveSubmenu = function(index, submenu) {
+           $scope.activeMenuIndex = index;
+           $scope.activeSubmenu = submenu.items;
+         };
+
+         this.toggleSet = function (item) {
+           item.inset = !item.inset;
+         };
+         
+         this.toggleComplactMode = function () {
+           $scope.compactMode = !$scope.compactMode;
+         };
+
+         this.openDialog = function(name, ev) {
+           $mdDialog.show($mdDialog.alert()
+             .title(name)
+             .textContent('You triggered the "' + name + '" action')
+             .ok('Great')
+             .targetEvent(ev)
+           );
+         };
 
        });

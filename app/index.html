@@ -32,45 +32,74 @@
   <!--Floating Menu-->
   <div id="float-menu" data-drag="true" jqyoui-draggable="{animate:true}">
 
-    <md-menu class="fmenu">
+    <md-toolbar class="md-menu-toolbar">
+      <md-menu-bar role="menubar">
 
-      <md-button aria-label="Open interactions menu" class="float-menu-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
-        <md-icon md-menu-origin md-svg-src="{{floatMenu[activeMenuIndex].icon}}"></md-icon>
-        {{floatMenu[activeMenuIndex].name}}
-      </md-button>
+        <md-menu class="fmenu">
 
-      <md-menu-content width="4">
+          <!--Active Menu Item-->
+          <button ng-click="ctrl.openMenu($mdOpenMenu, $event)" class="main-menu-item">
+            <md-icon md-svg-src="{{floatMenu[activeMenuIndex].icon}}"></md-icon>
+            {{compactMode ? '' :  floatMenu[activeMenuIndex].name}}
+          </button>
 
-        <md-menu-item ng-repeat="item in floatMenu">
-          <md-button ng-click="ctrl.alert(item)">
-            <md-icon md-svg-src="{{item.icon}}" md-menu-align-target></md-icon>
-            {{item.name}}
-          </md-button>
-        </md-menu-item>
+          <!--Submenu Items-->
+          <md-menu-content width="3">
+            <md-menu-item ng-repeat="item in floatMenu">
 
-      </md-menu-content>
+              <md-menu ng-if="item.items">
+                <md-button ng-click="ctrl.setActiveSubmenu($index, item)" class="md-button">
+                  <md-icon md-svg-src="{{item.icon}}"></md-icon>
+                  {{item.name}}
+                </md-button>
 
-    </md-menu>
+                <md-menu-content width="3">
+                  <md-menu-item ng-repeat="sitem in item.items">
+                    <md-button ng-click="ctrl.toggleSet(sitem)">
+                      <md-icon md-svg-src="{{sitem.icon}}"></md-icon>
+                      {{sitem.name}}
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
 
-    <md-menu class="fmenu">
+              <md-button ng-click="ctrl.sampleAction('New Document', $event)" ng-if="!item.items">
+                <md-icon md-svg-src="{{item.icon}}"></md-icon>
+                {{item.name}}
+              </md-button>
 
-      <md-button aria-label="Open interactions menu" class="float-menu-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)" ng-repeat="item in floatMenu[activeMenuIndex].items">
-        <md-icon md-menu-origin md-svg-src="{{item.icon}}"></md-icon>
-        {{item.name}}
-      </md-button>
 
-      <md-menu-content width="4">
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
 
-        <md-menu-item ng-repeat="citem in item.items">
-          <md-button ng-click="ctrl.alert(citem)">
-            <md-icon md-svg-src="{{citem.icon}}" md-menu-align-target></md-icon>
-            {{citem.name}}
-          </md-button>
-        </md-menu-item>
+        <!--<div class="submenu">-->
+          <md-menu class="submenu" index="{{$index}}" ng-repeat="item in activeSubmenu" ng-if="item.inset">
 
-      </md-menu-content>
+            <button aria-label="Open interactions menu" class="float-menu-button"
+                    ng-click="ctrl.openMenu($mdOpenMenu, $event)" >
+              <md-icon md-menu-origin md-svg-src="{{item.icon}}"></md-icon>
+              {{compactMode ? '' : item.name}}
+            </button>
 
-    </md-menu>
+            <md-menu-content width="3">
+
+              <md-menu-item ng-repeat="citem in item.items">
+                <md-button ng-click="ctrl.alert(citem)">
+                  <md-icon md-svg-src="{{citem.icon}}"></md-icon>
+                  {{citem.name}}
+                </md-button>
+              </md-menu-item>
+
+            </md-menu-content>
+
+          </md-menu>
+        <!--</div>-->
+
+      </md-menu-bar>
+    </md-toolbar>
+
+    <div class="{{ compactMode ? 'compact-mode-icon off' : 'compact-mode-icon' }}" ng-click="ctrl.toggleComplactMode()"></div>
 
   </div>
 

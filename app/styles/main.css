@@ -12,8 +12,8 @@ html {
 }
 
 body {
-  font-weight: 100;
-  letter-spacing: 1.2px;
+  font-weight: 300;
+  /*letter-spacing: 1.2px;*/
   height: 100%;
   padding: 0;
   margin: 0;
@@ -59,16 +59,59 @@ body {
   line-height: 32px;
   background-color: white;
   border: 1px solid silver;
-  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .fmenu {
   padding: 5px;
-  width: auto;
 }
 .fmenu > li {
   float: left;
   padding: 0 0 0 10px;
   margin: 0;
 }
+.md-menu-toolbar {
+  min-height: 32px;
+}
+.md-menu > button {
+  font-weight: 700;
+  min-height: 48px;
+}
 
+.md-menu > button > md-icon {
+  margin: 0 10px 5px 0;
+}
+
+md-menu-item {
+  height: 36px !important;
+}
+md-menu-bar > md-menu.submenu[index="0"] {
+  border-left: solid 1px #dfdfdf;
+
+}
+md-menu-bar > md-menu:last-of-type {
+  border-right: solid 1px #e8e8e8;
+
+}
+.submenu {
+  background-color: whitesmoke;
+  border-top: solid 1px #f0f0f0;
+  border-bottom: solid 1px white;
+}
+.compact-mode-icon {
+  position: absolute;
+  z-index: 20;
+  right: 7px;
+  top: 5px;
+  display: inline-block;
+  cursor: pointer;
+  border: 5px solid transparent;
+  border-right-color: #888;
+  transform: scale(1.2, 1);
+}
+.compact-mode-icon.off {
+  right: 3px;
+  border-right-color: transparent;
+  border-left-color: #888;
+
+}
