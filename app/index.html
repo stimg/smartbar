@@ -34,6 +34,7 @@
 
     <md-menu class="fmenu">
       <md-button aria-label="Open phone interactions menu" class="float-menu-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+        <md-icon md-menu-origin md-svg-src="images/icons/SmartBar_Icons-01.svg"></md-icon>
         Architektur
       </md-button>
 
@@ -41,6 +42,7 @@
 
         <md-menu-item ng-repeat="item in floatMenu">
           <md-button ng-click="ctrl.alert(item)">
+            <md-icon md-svg-src="images/icons/SmartBar_Icons-02.svg" md-menu-align-target></md-icon>
             {{item.name}}
           </md-button>
         </md-menu-item>

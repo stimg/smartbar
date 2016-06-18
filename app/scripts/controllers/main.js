@@ -12,25 +12,15 @@ angular.module('smartbarApp')
        .controller('MainCtrl', function ($scope, $mdDialog) {
 
          var originatorEv;
+
          this.openMenu = function ($mdOpenMenu, ev) {
            originatorEv = ev;
            $mdOpenMenu(ev);
          };
 
-         $scope.floatMenu = [
-           {
-             name: 'item #1'
-           },
-           {
-             name: 'item #2'
-           },
-           {
-             name: 'item #3'
-           },
-           {
-             name: 'item #4'
-           }
-         ];
+         $.getJSON('menu.json').then(function (menu) {
+           $scope.floatMenu = menu; 
+         });
 
          this.alert = function (item) {
            alert(item.name);

@@ -2,19 +2,79 @@
   "name": "Main",
   "items": [
     {
-      "name": "sub 1",
+      "name": "Modellieren",
+      "icon": "",
+      "items": [
+        {
+          "name": "Modellieren #1",
+          "icon": ""
+        },
+        {
+          "name": "Modellieren #2",
+          "icon": ""
+        },
+        {
+          "name": "Modellieren #3",
+          "icon": ""
+        },
+        {
+          "name": "Modellieren #4",
+          "icon": ""
+        }
+      ]
+    },
+    {
+      "name": "Konstruieren",
       "icon": ""
     },
     {
-      "name": "sub 2",
+      "name": "Rohbau",
+      "icon": "",
+      "items": [
+        {
+          "name": "Wand",
+          "icon": ""
+        },
+        {
+          "name": "Öffnung",
+          "icon": ""
+        },
+        {
+          "name": "Tür",
+          "icon": ""
+        },
+        {
+          "name": "Fundament",
+          "icon": ""
+        },
+        {
+          "name": "Stütze",
+          "icon": ""
+        },
+        {
+          "name": "Dach",
+          "icon": ""
+        },
+        {
+          "name": "Decke",
+          "icon": ""
+        }
+      ]
+    },
+    {
+      "name": "Ausbau",
       "icon": ""
     },
     {
-      "name": "sub 3",
+      "name": "Bewehren",
       "icon": ""
     },
     {
-      "name": "sub 4",
+      "name": "Bemaßen",
+      "icon": ""
+    },
+    {
+      "name": "Visualisieren",
       "icon": ""
     }
   ]
