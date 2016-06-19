@@ -7,6 +7,14 @@
   padding: 0.2em 0;
 }
 
+.md-18 {
+  font-size: 18px;
+  padding-top: 8px;
+}
+.md-gold {
+  color: gold;
+}
+
 html {
   height: 100%;
 }
@@ -60,6 +68,16 @@ body {
   border: 1px solid silver;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   opacity: 0.2;
+  transition: opacity 0.5s;
+}
+#float-menu:before {
+  content: ':::::::::';
+  display: inline-block;
+  position: absolute;
+  z-index: 120;
+  color: silver;
+  height: 32px;
+  transform: rotate(90deg) translate(10px, 5px);
 }
 
 .fmenu {

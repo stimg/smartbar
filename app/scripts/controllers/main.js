@@ -9,11 +9,14 @@
  */
 angular.module('smartbarApp')
 
-  .controller('MainCtrl', function ($scope, $http, $mdDialog) {
+  .controller('MainCtrl', function ($scope, $http, $timeout, $mdDialog) {
+
+    var $ = angular.element;
 
     $scope.activeMenuIndex = 0;
     $scope.activeSubmenu = {};
-    $scope.compactMode = true;
+    $scope.compactMode = false;
+    $scope.floatMenuHidden = true;
     this.hideMenuTID = null;
 
     var originatorEv;
@@ -41,15 +44,29 @@ angular.module('smartbarApp')
       $scope.compactMode = !$scope.compactMode;
     };
 
-    this.hideFloatMenu = function () {
-      this.hideMenuTID = setTimeout(function () {
-        $('#float-menu').fadeOut();
-      }, 300);
+    this.hideFloatMenu = function (evt) {
+
+      evt.stopPropagation();
+      this.hideMenuTID = $timeout(function () {
+
+        $scope.floatMenuHidden = true;
+        $('#float-menu').css('opacity', 0.2);
+
+      }, 1000);
+
     };
 
-    this.showFloatMenu = function () {
-      clearTimeout(this.hideMenuTID);
-      $('#float-menu').fadeIn();
+    this.showFloatMenu = function (evt) {
+
+      evt.stopPropagation();
+      if (this.hideMenuTID) {
+
+        $timeout.cancel(this.hideMenuTID);
+
+      }
+      $scope.floatMenuHidden = false;
+      $('#float-menu').css('opacity', 1);
+
     };
 
     this.openDialog = function (name, ev) {
@@ -59,6 +76,12 @@ angular.module('smartbarApp')
         .ok('Great')
         .targetEvent(ev)
       );
+    };
+
+    this.fmenuDragStop = function (evt) {
+
+      $(evt.target).css('width', '');
+
     };
 
   });

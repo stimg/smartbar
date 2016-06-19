@@ -1,7 +1,7 @@
 [
   {
     "name": "Modellieren",
-    "icon": "images/icons/SmartBar_Icons-01.svg",
+    "icon": "images/icons/SmartBar_Icons-64.svg",
     "items": [
       {
         "name": "Model #1",
@@ -60,7 +60,7 @@
         ]
       },
       {
-        "name": "Modellieren #4",
+        "name": "Model #4",
         "icon": "images/icons/SmartBar_Icons-05.svg",
         "inset": true,
         "items": [
