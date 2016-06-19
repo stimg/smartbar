@@ -55,11 +55,11 @@ body {
   cursor: default;
   top: 100px;
   left: 150px;
-  width: auto;
   line-height: 32px;
   background-color: white;
   border: 1px solid silver;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0.2;
 }
 
 .fmenu {
@@ -100,7 +100,7 @@ md-menu-bar > md-menu:last-of-type {
 }
 .compact-mode-icon {
   position: absolute;
-  z-index: 20;
+  z-index: 120;
   right: 7px;
   top: 5px;
   display: inline-block;

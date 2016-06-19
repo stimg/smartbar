@@ -19,7 +19,7 @@
 <body ng-app="smartbarApp" ng-cloak>
 
 <!-- Add your site or application content here -->
-<div class="main-container" ng-controller="MainCtrl as ctrl">
+<div class="main-container" ng-controller="MainCtrl as ctrl" ng-mouseover="ctrl.hideFloatMenu();">
 
   <!--<div ng-include="'views/main.html'"></div>-->
 
@@ -40,7 +40,7 @@
           <!--Active Menu Item-->
           <button ng-click="ctrl.openMenu($mdOpenMenu, $event)" class="main-menu-item">
             <md-icon md-svg-src="{{floatMenu[activeMenuIndex].icon}}"></md-icon>
-            {{compactMode ? '' :  floatMenu[activeMenuIndex].name}}
+            {{compactMode ? '' :  floatMenu[activeMenuIndex].name}} &nbsp; &gt;&gt;
           </button>
 
           <!--Submenu Items-->
