@@ -133,3 +133,47 @@ md-menu-bar > md-menu:last-of-type {
   border-left-color: #888;
 
 }
+
+.plus-button {
+  position: absolute;
+  z-index: 120;
+  right: 3px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  color: #888
+}
+
+.plus-button > md-toolbar {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.plus-button > md-toolbar > md-menu-bar {
+  padding: 0;
+  margin: 0;
+}
+
+.plus-button > md-toolbar > md-menu-bar > md-menu {
+  border: 0;
+}
+
+.plus-button button {
+  display: inline-block;
+  width: 16px;
+  height: 16px !important;
+  min-height: 24px !important;
+  padding: 0;
+  background-color: transparent !important;
+  border: 0;
+}
+
+.plus-button button > i {
+  font-size: 18px;
+  color: #888;
+}
