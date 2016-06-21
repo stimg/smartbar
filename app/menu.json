@@ -1,296 +1,134 @@
-[
-  {
-    "name": "Modellieren",
-    "icon": "images/icons/SmartBar_Icons-64.svg",
-    "items": [
-      {
-        "name": "Model #1",
-        "icon": "images/icons/SmartBar_Icons-02.svg",
-        "inset": true,
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-22.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-23.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-24.svg"
-          }
-        ]
-      },
-      {
-        "name": "Model #2",
-        "icon": "images/icons/SmartBar_Icons-03.svg",
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-32.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-33.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-34.svg"
-          }
-        ]
-      },
-      {
-        "name": "Model #3",
-        "icon": "images/icons/SmartBar_Icons-04.svg",
-        "inset": true,
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-42.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-43.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-44.svg"
-          }
-        ]
-      },
-      {
-        "name": "Model #4",
-        "icon": "images/icons/SmartBar_Icons-05.svg",
-        "inset": true,
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-52.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-53.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-54.svg"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Rohbau",
-    "icon": "images/icons/SmartBar_Icons-01.svg",
-    "items": [
-      {
-        "name": "Wand",
-        "icon": "images/icons/SmartBar_Icons-01.svg",
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-62.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-63.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-64.svg"
-          }
-        ]
-      },
-      {
-        "name": "Öffnung",
-        "icon": "images/icons/SmartBar_Icons-02.svg",
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-12.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-13.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-14.svg"
-          }
-        ]
-      },
-      {
-        "name": "Tür",
-        "icon": "images/icons/SmartBar_Icons-03.svg",
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-04.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-05.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-06.svg"
-          }
-        ]
-      },
-      {
-        "name": "Fundament",
-        "icon": "images/icons/SmartBar_Icons-04.svg",
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-07.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-08.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-09.svg"
-          }
-        ]
-      },
-      {
-        "name": "Stütze",
-        "icon": "images/icons/SmartBar_Icons-05.svg",
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-10.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-11.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-12.svg"
-          }
-        ]
-      },
-      {
-        "name": "Dach",
-        "icon": "images/icons/SmartBar_Icons-06.svg",
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-25.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-26.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-27.svg"
-          }
-        ]
-      },
-      {
-        "name": "Decke",
-        "icon": "images/icons/SmartBar_Icons-07.svg",
-        "items": [
-          {
-            "name": "Level 2 item #1",
-            "icon": "images/icons/SmartBar_Icons-28.svg"
-          },
-          {
-            "name": "Level 2 item #2",
-            "icon": "images/icons/SmartBar_Icons-29.svg"
-          },
-          {
-            "name": "Level 2 item #3",
-            "icon": "images/icons/SmartBar_Icons-30.svg"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Ausbau",
-    "icon": "images/icons/SmartBar_Icons-08.svg",
-    "items": [
-      {
-        "name": "Level 1 item",
-        "icon": "images/icons/SmartBar_Icons-54.svg",
-        "items": [
-          {
-            "name": "Level 2 item",
-            "icon": "images/icons/SmartBar_Icons-55.svg"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Bewehren",
-    "icon": "images/icons/SmartBar_Icons-09.svg",
-    "items": [
-      {
-        "name": "Level 1 item",
-        "icon": "images/icons/SmartBar_Icons-56.svg",
-        "items": [
-          {
-            "name": "Level 2 item",
-            "icon": "images/icons/SmartBar_Icons-57.svg"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Bemaßen",
-    "icon": "images/icons/SmartBar_Icons-10.svg",
-    "items": [
-      {
-        "name": "Level 1 item",
-        "icon": "images/icons/SmartBar_Icons-58.svg",
-        "items": [
-          {
-            "name": "Level 2 item",
-            "icon": "images/icons/SmartBar_Icons-59.svg"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Konstruieren",
-    "icon": "images/icons/SmartBar_Icons-06.svg",
-    "items": [
-      {
-        "name": "Level 1 item",
-        "icon": "images/icons/SmartBar_Icons-60.svg",
-        "items": [
-          {
-            "name": "Level 2 item",
-            "icon": "images/icons/SmartBar_Icons-61.svg"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Visualisieren",
-    "icon": "images/icons/SmartBar_Icons-01.svg",
-    "items": [
-      {
-        "name": "Level 1 item",
-        "icon": "images/icons/SmartBar_Icons-13.svg",
-        "items": [
-          {
-            "name": "Level 2 item",
-            "icon": "images/icons/SmartBar_Icons-10.svg"
-          }
-        ]
-      }
-    ]
-  }
-]
+{
+  "functiongroups": [
+    {
+      "id": "group-1",
+      "name": "Group #1",
+      "icon": "images/icons/SmartBar_Icons-01.svg",
+      "items": [
+        {
+          "id": "subgroup-11",
+          "name": "Function #11",
+          "icon": "images/icons/SmartBar_Icons-11.svg"
+        },
+        {
+          "id": "subgroup-12",
+          "name": "Function #12",
+          "icon": "images/icons/SmartBar_Icons-12.svg"
+        },
+        {
+          "id": "subgroup-13",
+          "name": "Function #13",
+          "icon": "images/icons/SmartBar_Icons-13.svg"
+        }
+      ]
+    },
+    {
+      "id": "group-2",
+      "name": "Group #2",
+      "icon": "images/icons/SmartBar_Icons-02.svg",
+      "items": [
+        {
+          "id": "subgroup-21",
+          "name": "Function #21",
+          "icon": "images/icons/SmartBar_Icons-21.svg"
+        },
+        {
+          "id": "subgroup-22",
+          "name": "Function #22",
+          "icon": "images/icons/SmartBar_Icons-22.svg"
+        },
+        {
+          "id": "subgroup-23",
+          "name": "Function #23",
+          "icon": "images/icons/SmartBar_Icons-23.svg"
+        }
+      ]
+    },
+    {
+      "id": "group-3",
+      "name": "Group #3",
+      "icon": "images/icons/SmartBar_Icons-03.svg",
+      "items": [
+        {
+          "id": "subgroup-31",
+          "name": "Function #31",
+          "icon": "images/icons/SmartBar_Icons-31.svg"
+        },
+        {
+          "id": "subgroup-32",
+          "name": "Function #32",
+          "icon": "images/icons/SmartBar_Icons-32.svg"
+        },
+        {
+          "id": "subgroup-33",
+          "name": "Function #33",
+          "icon": "images/icons/SmartBar_Icons-33.svg"
+        }
+      ]
+    },
+    {
+      "id": "group-4",
+      "name": "Group #4",
+      "icon": "images/icons/SmartBar_Icons-04.svg",
+      "items": [
+        {
+          "id": "subgroup-41",
+          "name": "Function #41",
+          "icon": "images/icons/SmartBar_Icons-41.svg"
+        },
+        {
+          "id": "subgroup-42",
+          "name": "Function #42",
+          "icon": "images/icons/SmartBar_Icons-42.svg"
+        },
+        {
+          "id": "subgroup-43",
+          "name": "Function #43",
+          "icon": "images/icons/SmartBar_Icons-43.svg"
+        }
+      ]
+    }
+  ],
+  "spaces": [
+    {
+      "name": "Modellieren",
+      "icon": "images/icons/SmartBar_Icons-64.svg",
+      "items": [
+        "group-1",
+        "group-4"
+      ]
+    },
+    {
+      "name": "Rohbau",
+      "icon": "images/icons/SmartBar_Icons-01.svg",
+      "items": []
+    },
+    {
+      "name": "Ausbau",
+      "icon": "images/icons/SmartBar_Icons-08.svg",
+      "items": []
+    },
+    {
+      "name": "Bewehren",
+      "icon": "images/icons/SmartBar_Icons-09.svg",
+      "items": []
+    },
+    {
+      "name": "Bemaßen",
+      "icon": "images/icons/SmartBar_Icons-10.svg",
+      "items": []
+    },
+    {
+      "name": "Konstruieren",
+      "icon": "images/icons/SmartBar_Icons-06.svg",
+      "items": []
+    },
+    {
+      "name": "Visualisieren",
+      "icon": "images/icons/SmartBar_Icons-01.svg",
+      "items": []
+    }
+  ]
+}
+
 

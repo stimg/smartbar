@@ -9,8 +9,8 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -30,13 +30,13 @@
 
         <!--Active Menu Item-->
         <button ng-click="ctrl.openMenu($mdOpenMenu, $event)" class="main-menu-item">
-          <md-icon md-svg-src="{{floatMenu[activeMenuIndex].icon}}"></md-icon>
-          {{(compactMode || floatMenuHidden) ? '' : floatMenu[activeMenuIndex].name}}
+          <md-icon md-svg-src="{{spaces[activeSpaceIndex].icon}}"></md-icon>
+          {{(compactMode || floatMenuHidden) ? '' : spaces[activeSpaceIndex].name}}
         </button>
 
         <!--Submenu Items-->
         <md-menu-content width="3">
-          <md-menu-item ng-repeat="item in floatMenu">
+          <md-menu-item ng-repeat="item in spaces">
 
             <!--<md-menu ng-if="item.items">-->
             <md-button ng-click="ctrl.setActiveSubmenu($index, item)" class="md-button">
@@ -71,7 +71,7 @@
       </md-menu>
 
       <!--<div class="submenu">-->
-      <md-menu class="submenu" index="{{$index}}" ng-repeat="item in activeSubmenu" ng-if="item.inset">
+      <md-menu class="submenu" index="{{$index}}" ng-repeat="item in functiongroups" ng-if="spaces[activeSpaceIndex].items.indexOf(item.id) !== -1">
 
         <button aria-label="Open interactions menu" class="float-menu-button"
                 ng-click="ctrl.openMenu($mdOpenMenu, $event)">
@@ -109,7 +109,7 @@
 
 
         <md-menu-content width="3">
-          <md-menu-item ng-repeat="sitem in activeSubmenu">
+          <md-menu-item ng-repeat="sitem in functiongroups">
             <md-button ng-click="ctrl.toggleSet(sitem)">
               <md-icon md-svg-src="{{sitem.icon}}"></md-icon>
               {{sitem.name}}

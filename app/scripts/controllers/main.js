@@ -13,7 +13,7 @@ angular.module('smartbarApp')
 
     var $ = angular.element;
 
-    $scope.activeMenuIndex = 0;
+    $scope.activeSpaceIndex = 0;
     $scope.activeSubmenu = {};
     $scope.compactMode = false;
     $scope.floatMenuHidden = true;
@@ -27,17 +27,18 @@ angular.module('smartbarApp')
     };
 
     $http.get('menu.json').then(function (menu) {
-      $scope.floatMenu = menu.data;
-      $scope.activeSubmenu = menu.data[0].items;
+      $scope.spaces = menu.data.spaces;
+      $scope.functiongroups = menu.data.functiongroups;
+      $scope.activeSpace = menu.data.spaces[0].items;
     });
 
     this.setActiveSubmenu = function (index, submenu) {
-      $scope.activeMenuIndex = index;
+      $scope.activeSpaceIndex = index;
       $scope.activeSubmenu = submenu.items;
     };
 
     this.toggleSet = function (item) {
-      item.inset = !item.inset;
+      $scope.spaces[$scope.activeSpaceIndex].items.push(item.id);
     };
 
     this.toggleComplactMode = function () {
