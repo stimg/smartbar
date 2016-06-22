@@ -94,8 +94,8 @@
       "name": "Modellieren",
       "icon": "images/icons/SmartBar_Icons-64.svg",
       "items": [
-        "group-1",
-        "group-4"
+        "subgroup-11",
+        "subgroup-13"
       ]
     },
     {
