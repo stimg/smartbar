@@ -9,80 +9,118 @@
  */
 angular.module('smartbarApp')
 
-  .controller('MainCtrl', function ($scope, $http, $timeout, $mdDialog) {
+       .controller('MainCtrl', function ($scope, $http, $timeout, $mdDialog) {
 
-    var $ = angular.element;
+         var $ = angular.element;
 
-    $scope.activeSpaceIndex = 0;
-    $scope.activeSubmenu = {};
-    $scope.compactMode = false;
-    $scope.floatMenuHidden = true;
-    this.hideMenuTID = null;
+         $scope.activeSpaceIndex = 0;
+         $scope.activeSubmenu = {};
+         $scope.compactMode = false;
+         $scope.floatMenuHidden = true;
+         this.hideMenuTID = null;
 
-    var originatorEv;
+         var originatorEv;
 
-    this.openMenu = function ($mdOpenMenu, ev) {
-      originatorEv = ev;
-      $mdOpenMenu(ev);
-    };
+         this.openMenu = function ($mdOpenMenu, ev) {
+           originatorEv = ev;
+           $mdOpenMenu(ev);
+         };
 
-    $http.get('menu.json').then(function (menu) {
-      $scope.spaces = menu.data.spaces;
-      $scope.functiongroups = menu.data.functiongroups;
-      $scope.activeSpace = menu.data.spaces[0].items;
-    });
+         $http.get('menu.json').then(function (menu) {
+           $scope.spaces = menu.data.spaces;
+           $scope.functiongroups = menu.data.functiongroups;
+           $scope.activeSpace = menu.data.spaces[0].items;
+         });
 
-    this.setActiveSubmenu = function (index, submenu) {
-      $scope.activeSpaceIndex = index;
-      $scope.activeSubmenu = submenu.items;
-    };
+         this.setActiveSubmenu = function (index, submenu) {
+           $scope.activeSpaceIndex = index;
+           $scope.activeSubmenu = submenu.items;
+         };
 
-    this.toggleSet = function (item) {
-      $scope.spaces[$scope.activeSpaceIndex].items.push(item.id);
-    };
+         this.toggleSet = function (item) {
 
-    this.toggleComplactMode = function () {
-      $scope.compactMode = !$scope.compactMode;
-    };
+           var iset = $scope.spaces[$scope.activeSpaceIndex].items,
+             idx = iset.indexOf(item.id);
 
-    this.hideFloatMenu = function (evt) {
+           if (idx === -1) {
 
-      evt.stopPropagation();
-      this.hideMenuTID = $timeout(function () {
+             iset.push(item.id);
 
-        $scope.floatMenuHidden = true;
-        $('#float-menu').css('opacity', 0.2);
+           } else {
 
-      }, 1000);
+             iset.splice(idx, 1);
 
-    };
+           }
 
-    this.showFloatMenu = function (evt) {
+         };
 
-      evt.stopPropagation();
-      if (this.hideMenuTID) {
+         this.toggleComplactMode = function () {
+           $scope.compactMode = !$scope.compactMode;
+         };
 
-        $timeout.cancel(this.hideMenuTID);
+         this.getFunction = function (id) {
 
-      }
-      $scope.floatMenuHidden = false;
-      $('#float-menu').css('opacity', 1);
+           var fg = $scope.functiongroups,
+             fglen = fg.length, fn;
 
-    };
+           for (var i = 0; i < fglen; i++) {
 
-    this.openDialog = function (name, ev) {
-      $mdDialog.show($mdDialog.alert()
-        .title(name)
-        .textContent('You triggered the "' + name + '" action')
-        .ok('Great')
-        .targetEvent(ev)
-      );
-    };
+             fn = fg[i].items.find(function (f) {
 
-    this.fmenuDragStop = function (evt) {
+               return f.id === id;
 
-      $(evt.target).css('width', '');
+             });
 
-    };
+             if (fn) {
 
-  });
+               break;
+
+             }
+
+           }
+
+           return fn;
+
+         };
+
+         this.hideFloatMenu = function (evt) {
+
+           evt.stopPropagation();
+           this.hideMenuTID = $timeout(function () {
+
+             $scope.floatMenuHidden = true;
+             $('#float-menu').css('opacity', 0.2);
+
+           }, 1000);
+
+         };
+
+         this.showFloatMenu = function (evt) {
+
+           evt.stopPropagation();
+           if (this.hideMenuTID) {
+
+             $timeout.cancel(this.hideMenuTID);
+
+           }
+           $scope.floatMenuHidden = false;
+           $('#float-menu').css('opacity', 1);
+
+         };
+
+         this.openDialog = function (name, ev) {
+           $mdDialog.show($mdDialog.alert()
+                                   .title(name)
+                                   .textContent('You triggered the "' + name + '" action')
+                                   .ok('Great')
+                                   .targetEvent(ev)
+           );
+         };
+
+         this.fmenuDragStop = function (evt) {
+
+           $(evt.target).css('width', '');
+
+         };
+
+       });

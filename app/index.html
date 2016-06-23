@@ -70,18 +70,16 @@
         </md-menu-content>
       </md-menu>
 
-      <!--<div class="submenu">-->
-      <md-menu class="submenu" index="{{$index}}" ng-repeat="item in functiongroups"
-               ng-if="spaces[activeSpaceIndex].items.indexOf(item.id) !== -1">
+      <md-menu class="submenu" index="{{$index}}" ng-repeat="fid in spaces[activeSpaceIndex].items" ng-if="func = ctrl.getFunction(fid)">
 
         <button ng-click="ctrl.openMenu($mdOpenMenu, $event)">
-          <md-icon md-svg-src="{{item.icon}}"></md-icon>
-          {{(compactMode || floatMenuHidden) ? '' : item.name}}
+          <md-icon md-svg-src="{{func.icon}}"></md-icon>
+          {{(compactMode || floatMenuHidden) ? '' : func.name}}
         </button>
 
         <md-menu-content width="3">
 
-          <md-menu-item ng-repeat="citem in item.items">
+          <md-menu-item ng-repeat="citem in func.items">
             <md-button ng-click="ctrl.alert(citem)">
               <md-icon md-svg-src="{{citem.icon}}"></md-icon>
               {{citem.name}}
@@ -91,9 +89,8 @@
         </md-menu-content>
 
       </md-menu>
-      <!--</div>-->
+      </md-menu-bar>
 
-    </md-menu-bar>
   </md-toolbar>
 
   <div class="{{ compactMode ? 'compact-mode-icon off' : 'compact-mode-icon' }}"
@@ -110,15 +107,13 @@
           <md-menu-content width="3">
             <md-menu-item ng-repeat="sitem in functiongroups">
 
-              <!--<md-menu>-->
+              <md-menu>
                 <md-button ng-click="ctrl.toggleSet(sitem)">
                   <md-icon md-svg-src="{{sitem.icon}}"></md-icon>
                   {{sitem.name}}
-                  <i class="material-icons md-18 md-gold"
-                     ng-show="spaces[activeSpaceIndex].items.indexOf(sitem.id) !== -1">star</i>
+                  <!--<i class="material-icons md-18 md-gold" ng-show="spaces[activeSpaceIndex].items.indexOf(sitem.id) !== -1">star</i>-->
                 </md-button>
 
-<!--
                 <md-menu-content width="3">
                   <md-menu-item ng-repeat="sfitem in sitem.items">
                     <md-button ng-click="ctrl.toggleSet(sfitem)">
@@ -131,7 +126,6 @@
                   </md-menu-item>
                 </md-menu-content>
               </md-menu>
--->
 
             </md-menu-item>
           </md-menu-content>
