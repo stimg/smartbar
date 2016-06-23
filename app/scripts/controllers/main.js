@@ -22,8 +22,21 @@ angular.module('smartbarApp')
          var originatorEv;
 
          this.openMenu = function ($mdOpenMenu, ev) {
+
            originatorEv = ev;
            $mdOpenMenu(ev);
+
+         };
+
+         this.openFuncMenu = function ($mdOpenMenu, ev, func) {
+
+           if (func && func.items) {
+
+             originatorEv = ev;
+             $mdOpenMenu(ev);
+
+           }
+
          };
 
          $http.get('menu.json').then(function (menu) {
@@ -61,15 +74,16 @@ angular.module('smartbarApp')
          this.getFunction = function (id) {
 
            var fg = $scope.functiongroups,
-             fglen = fg.length, fn;
-
-           for (var i = 0; i < fglen; i++) {
-
-             fn = fg[i].items.find(function (f) {
+             fglen = fg.length, fn,
+             sf = function (f) {
 
                return f.id === id;
 
-             });
+             };
+
+           for (var i = 0; i < fglen; i++) {
+
+             fn = fg[i].items.find(sf);
 
              if (fn) {
 

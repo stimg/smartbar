@@ -70,14 +70,15 @@
         </md-menu-content>
       </md-menu>
 
-      <md-menu class="submenu" index="{{$index}}" ng-repeat="fid in spaces[activeSpaceIndex].items" ng-if="func = ctrl.getFunction(fid)">
+      <!--<md-menu class="submenu" index="{{$index}}" ng-repeat="fid in spaces[activeSpaceIndex].items" ng-if="(func = ctrl.getFunction(fid)) && func.items">-->
+      <md-menu class="submenu" index="{{$index}}" ng-repeat="fid in spaces[activeSpaceIndex].items" ng-if="(func = ctrl.getFunction(fid))">
 
-        <button ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+        <button ng-click="ctrl.openFuncMenu($mdOpenMenu, $event, func)">
           <md-icon md-svg-src="{{func.icon}}"></md-icon>
           {{(compactMode || floatMenuHidden) ? '' : func.name}}
         </button>
 
-        <md-menu-content width="3">
+        <md-menu-content width="3" ng-show="func.items">
 
           <md-menu-item ng-repeat="citem in func.items">
             <md-button ng-click="ctrl.alert(citem)">
@@ -89,7 +90,8 @@
         </md-menu-content>
 
       </md-menu>
-      </md-menu-bar>
+
+    </md-menu-bar>
 
   </md-toolbar>
 
@@ -144,14 +146,16 @@
 
 
   <!--Top Menu-->
+<!--
   <div class="top-menu">
     <div><span style="font-weight: 700;">Allplan SmartBar</span> [ Top Menu, docking area ]</div>
   </div>
+-->
 
 
   <!--Bottom Menu-->
   <div class="bottom-menu">
-    <div style="text-align: center;">&copy; 2016 Allplan SmartBar Prototype. <i>| top secret |</i></div>
+    <div style="text-align: center;">&copy; 2016 Allplan SmartBar Prototype. <i>Created by Alexey Zerkalenkov | SMART IMAGE</i></div>
   </div>
 
 

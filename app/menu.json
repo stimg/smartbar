@@ -8,8 +8,24 @@
         {
           "id": "subgroup-11",
           "name": "Function #11",
-          "icon": "images/icons/SmartBar_Icons-11.svg"
-        },
+          "icon": "images/icons/SmartBar_Icons-11.svg",
+          "items": [
+            {
+              "id": "subgroup-111",
+              "name": "Function #111",
+              "icon": "images/icons/SmartBar_Icons-11.svg"
+            },
+            {
+              "id": "subgroup-112",
+              "name": "Function #112",
+              "icon": "images/icons/SmartBar_Icons-12.svg"
+            },
+            {
+              "id": "subgroup-113",
+              "name": "Function #113",
+              "icon": "images/icons/SmartBar_Icons-13.svg"
+            }
+          ]},
         {
           "id": "subgroup-12",
           "name": "Function #12",

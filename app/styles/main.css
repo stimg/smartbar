@@ -30,6 +30,9 @@ body {
 .main-container {
   height: 100%;
   background-color: whitesmoke;
+  background-image: url(../images/visu_u0.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .top-menu {
@@ -61,8 +64,8 @@ body {
   position: absolute;
   white-space: nowrap;
   cursor: default;
-  top: 100px;
-  left: 150px;
+  top: 51px;
+  left: 350px;
   line-height: 32px;
   background-color: white;
   border: 1px solid silver;
